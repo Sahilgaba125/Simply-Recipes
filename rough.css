@@ -1,0 +1,157 @@
+.main-hero {
+  position: relative;
+  height: 40vh;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  text-align: center;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px) brightness(0.5); /* Apply blur and dimming */
+  z-index: 0; /* Background image layer */
+}
+
+.hero-text {
+  position: relative;
+  color: white;
+  z-index: 1; /* Text layer above background */
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.left-arrow-container, .right-arrow-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2); /* Light background */
+  cursor: pointer;
+  z-index: 2; /* Above background, below text */
+}
+
+.left-arrow-container { left: 0; }
+.right-arrow-container { right: 0; }
+
+.left-arrow, .right-arrow {
+  font-size: 2rem;
+  color: white;
+}
+
+
+
+.main-hero {
+  position: relative;
+  background: url('images/main.jpeg') center/cover no-repeat;
+  height: 40vh;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+}
+
+.hero-text {
+  color: white;
+  text-align: center;
+  gap: 1rem;
+}
+
+
+/* same effeect just with blur property */
+/* Main hero section */
+.main-hero {
+  position: relative;
+  height: 40vh; /* Adjust as needed */
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+/* Container for the hero content */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Styling the hero text */
+.hero-text {
+  position: absolute;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Hero image styling with blur and dimming */
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px) brightness(0.5); /* Blur and darken the image */
+}
+
+/* Arrow containers for background and positioning */
+.left-arrow-container, .right-arrow-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2); /* Light background */
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Positioning each arrow container on the left and right */
+.left-arrow-container { left: 0; }
+.right-arrow-container { right: 0; }
+
+/* Arrow styling */
+.left-arrow, .right-arrow {
+  font-size: 2rem;
+  color: white;
+}
+
+

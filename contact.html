@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Simply Recipes </title>
+    <link rel="stylesheet" href="S-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+  
+  <nav class="header">
+    <div class="nav-wrapper">
+      <div class="nav-header">
+         <a href="./S-Index.html"> 
+           <img src="images/logo.svg" id="logo" alt="Simply Recipes">
+         </a>
+         <button type="button" class="hamburger-menu contact-btn">
+          <i class="fas fa-align-justify"></i> <!-- Icon for hamburger menu -->
+         </button>
+      </div>
+       <div class="nav-links">
+         <a class="nav-link" href="S-Index.html">Home</a>
+         <a class="nav-link" href="About.html">About</a>
+         <a class="nav-link" href="Tags.html">Tags</a>
+         <a class="nav-link" href="#">Recipes</a>
+         <div class="nav-link contact-link">
+           <a class="contact-btn" href="contact.html">Contact</a>
+         </div>
+      </div>
+    </div>
+   </nav>
+
+  <main class="wrapper">
+    <section class="contact-hero">
+       <article class="contact-hero-text">
+          <h3>Want To Get In Touch? </h3>
+          <p> Four dollar toast biodiesel plaid salvia actually pickled banjo bespoke mlkshk intelligentsia edison bulb synth.</p>
+          <p>Cardigan prism bicycle rights put a bird on it deep v.</p>
+          <p>Hashtag swag health goth air plant, raclette listicle fingerstache cold-pressed fanny pack bicycle rights cardigan poke.</p>
+        </article>
+        <article>
+          <form class="contact-form">
+            <div class="form-row">
+              <label class="form-label"> Your name</label>
+              <input type="text" name="name" class="form-input name-input" />
+            </div>
+            <div class="form-row">
+              <label class="form-label"> Your email</label>
+              <input type="email" name="email" class="form-input email-input" />
+            </div>
+            <div class="form-row">
+              <label class="form-label"> Message</label>
+              <textarea name="message" class="form-textarea message-textarea"></textarea>
+            </div>
+            <button type="submit" class="contact-btn btn-block">
+              submit
+            </button>
+          </form>
+        </article> 
+    </section>
+    <section class="featured-recipes">
+      <h5>Look At This Awesomesouce!</h5>
+      <div class="images">
+          <a class= 'recipe' href="/single-recipe" >
+             <img src="images/recipe-1.jpeg" class="img recipe-img">
+             <h5>Carne Asada</h5>
+              <p>Prep : 15min | Cook : 5min</p>
+          </a>
+          <a class="recipe" href="/single-recipe" >
+             <img src="images/recipe-2.jpeg" class="img recipe-img">
+              <h5>Greek Ribs</h5>
+              <p>Prep : 15min | Cook : 5min</p>
+          </a>
+          <a class="recipe" href="/single-recipe" >
+             <img src="images/recipe-3.jpeg" class="img recipe-img">
+             <h5>Vegetable Soup</h5>
+             <p>Prep : 15min | Cook : 5min</p>
+          </a>
+     </div>
+  </section>
+</main>
+
+  <footer class="footer" >
+    <p> © 2024 SimplyRecipes Built by Coding Addict </p>
+  </footer>
+   
+ <script>
+   const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show-links'); // Toggles 'show-links' class to display or hide the nav links
+    }); 
+    
+   const form = document.querySelector(".contact-form");
+   
+   function validateForm(event) {
+   const nameInput = document.querySelector(".name-input");
+   const emailInput = document.querySelector(".email-input");
+
+   if (nameInput.value === "" || emailInput.value === "") // // If either field is empty, show an alert
+  {
+    alert("Please fill in both name and email fields Bitch!");
+    event.preventDefault();  // Prevent form submission if fields are empty
+    nameInput.style.border=  "3px solid red";
+    emailInput.style.border= "3px solid red";
+  } 
+  else {
+    alert("Form submitted successfully!");
+  }
+}
+// Select the form element instead of the button
+// Listen for the form's submit event  and gives you more control over the submission.Ensures that all validation checks happen before the form is submitted.
+  form.addEventListener("submit", validateForm);
+
+ </script>
+ <script src="Main.js"></script>
+</body>
+</html>

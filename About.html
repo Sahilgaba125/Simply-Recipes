@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Simply Recipes </title>
+    <link rel="stylesheet" href="S-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+  
+   <nav class="header">
+      <div class="nav-wrapper">
+        <div class="nav-header">
+           <a href="./S-Index.html"> 
+             <img src="images/logo.svg" id="logo" alt="Simply Recipes">
+           </a>
+           <button type="button" class="hamburger-menu contact-btn">
+            <i class="fas fa-align-justify"></i> <!-- Icon for hamburger menu -->
+           </button>
+        </div>
+         <div class="nav-links">
+           <a class="nav-link" href="S-Index.html">Home</a>
+           <a class="nav-link" href="About.html">About</a>
+           <a class="nav-link" href="Tags.html">Tags</a>
+           <a class="nav-link" href="#">Recipes</a>
+           <div class="nav-link contact-link">
+             <a class="contact-btn" href="contact.html">Contact</a>
+           </div>
+        </div>
+      </div>
+     </nav>
+   
+  <main class="wrapper">
+       <section class='about-hero'>
+          <article class="about-hero-text">
+             <h2> I'm baby coloring book <br> poke taxidermy </h2>
+             <p> Taxidermy forage glossier letterpress heirloom before they sold out you probably haven't heard of them banh mi biodiesel chia. <br> <br> Taiyaki tumblr flexitarian jean shorts brunch, aesthetic salvia retro. </p>
+             <a href="contact.html"><button class="contact-btn"> Contact </button></a>
+          </article>
+          <img src="images/recipe-1.jpeg" class="about-hero-image">  
+       </section>
+       <section class="featured-recipes">
+          <h5>Look At This Awesomesouce!</h5>
+          <div class="images">
+              <a class= 'recipe' href="/single-recipe" >
+                 <img src="images/recipe-1.jpeg" class="img recipe-img">
+                 <h5>Carne Asada</h5>
+                  <p>Prep : 15min | Cook : 5min</p>
+              </a>
+              <a class="recipe" href="/single-recipe" >
+                 <img src="images/recipe-2.jpeg" class="img recipe-img">
+                  <h5>Greek Ribs</h5>
+                  <p>Prep : 15min | Cook : 5min</p>
+              </a>
+              <a class="recipe" href="/single-recipe" >
+                 <img src="images/recipe-3.jpeg" class="img recipe-img">
+                 <h5>Vegetable Soup</h5>
+                 <p>Prep : 15min | Cook : 5min</p>
+              </a>
+          </div>
+       </section>
+ </main>
+
+  <footer class="footer" >
+      <p> © 2024 SimplyRecipes Built by Coding Addict </p>
+   </footer>
+   <script>
+      const hamburger = document.querySelector('.hamburger-menu');
+       const navLinks = document.querySelector('.nav-links');
+   
+       hamburger.addEventListener('click', () => {
+       navLinks.classList.toggle('show-links'); // Toggles 'show-links' class to display or hide the nav links
+       });  
+    </script>
+  <script src="Main.js"> </script>
+</body>
