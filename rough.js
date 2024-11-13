@@ -1,4 +1,220 @@
 const images = ['images/main.jpeg', 'images/recipe-1.jpeg', 'images/recipe-2.jpeg'];
+let currentIndex = 0;
+const HeroImage = document.querySelector('.hero-image');
+const leftArrow = document.querySelector('.left-arrow-container');
+const rightArrow = document.querySelector('.right-arrow-container');
+
+// Preload images
+const preloadImages = (imageArray) => {
+    imageArray.forEach(src => {
+        const img = new Image();
+        img.src = src; // Preload each image
+    });
+};
+
+preloadImages(images); // Call this function with your images array
+
+// Function to slide the hero image
+function updateHeroImage() {
+    HeroImage.style.transition = 'none'; // Temporarily remove transition for reset
+    HeroImage.style.transform = `translateX(100%)`; // Move off-screen right
+    setTimeout(() => {
+        HeroImage.src = images[currentIndex];
+        HeroImage.style.transition = 'transform 1s ease'; // Smooth slide-in
+        HeroImage.style.transform = 'translateX(0)'; // Slide into view
+    }, 50); // Small delay to reset transform
+}
+
+// Auto-slide function called every 4 seconds
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateHeroImage();
+}
+
+// Event listeners for manual slide navigation
+rightArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateHeroImage();
+    resetAutoSlide(); // Restart auto-slide interval
+});
+
+leftArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateHeroImage();
+    resetAutoSlide(); // Restart auto-slide interval
+});
+
+// Start auto-slide after first user interaction or 4 seconds
+let autoSlideInterval = setInterval(autoSlide, 10000);
+
+// Reset auto-slide interval after each manual slide navigation
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(autoSlide, 10000);
+}
+
+
+
+
+
+const images = ['images/main.jpeg', 'images/recipe-1.jpeg', 'images/recipe-2.jpeg'];
+let currentIndex = 0;
+const HeroImage = document.querySelector('.hero-image');
+const leftArrow = document.querySelector('.left-arrow-container');
+const rightArrow = document.querySelector('.right-arrow-container');
+
+// Preload images
+const preloadImages = (imageArray) => {
+    imageArray.forEach(src => {
+        const img = new Image();
+        img.src = src; // Preload each image
+    });
+};
+
+preloadImages(images); // Call this function with your images array
+
+// Function to slide the hero image
+function updateHeroImage() {
+    HeroImage.style.transition = 'none'; // Temporarily remove transition for reset
+    HeroImage.style.transform = `translateX(100%)`; // Move off-screen right
+    setTimeout(() => {
+        HeroImage.src = images[currentIndex];
+        HeroImage.style.transition = 'transform 1s ease'; // Smooth slide-in
+        HeroImage.style.transform = 'translateX(0)'; // Slide into view
+    }, 50); // Small delay to reset transform
+}
+
+// Auto-slide function called every 4 seconds
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateHeroImage();
+}
+
+// Event listeners for manual slide navigation
+rightArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateHeroImage();
+    resetAutoSlide(); // Restart auto-slide interval
+});
+
+leftArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateHeroImage();
+    resetAutoSlide(); // Restart auto-slide interval
+});
+
+// Start auto-slide after first user interaction or 4 seconds
+let autoSlideInterval = setInterval(autoSlide, 10000);
+
+// Reset auto-slide interval after each manual slide navigation
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(autoSlide, 10000);
+}
+
+
+
+
+
+// Preload all images for smoother transitions
+images.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+// Function to slide the hero image
+function updateHeroImage() {
+  HeroImage.style.transition = 'none'; // Temporarily remove transition for reset
+  HeroImage.style.transform = `translateX(100%)`; // Move off-screen right
+  setTimeout(() => {
+      HeroImage.src = images[currentIndex];
+      HeroImage.style.transition = 'transform 1s ease'; // Smooth slide-in
+      HeroImage.style.transform = 'translateX(0)'; // Slide into view
+  }, 50); // Small delay to reset transform
+}
+
+// Auto-slide function called every 4 seconds
+function autoSlide() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateHeroImage();
+}
+
+// Event listeners for manual slide navigation
+rightArrow.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateHeroImage();
+  resetAutoSlide(); // Restart auto-slide interval
+});
+
+leftArrow.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateHeroImage();
+  resetAutoSlide(); // Restart auto-slide interval
+});
+
+// Start auto-slide after first user interaction or 4 seconds
+let autoSlideInterval = setInterval(autoSlide, 4000);
+
+// Reset auto-slide interval after each manual slide navigation
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(autoSlide, 4000);
+}
+
+
+
+
+const images = ['images/main.jpeg', 'images/recipe-1.jpeg', 'images/recipe-2.jpeg'];
+let currentIndex = 0;
+const HeroImage = document.querySelector('.hero-image');
+const leftArrow = document.querySelector('.left-arrow-container');
+const rightArrow = document.querySelector('.right-arrow-container');
+
+// Function to update the hero image with sliding effect
+function updateHeroImage() {
+    HeroImage.style.transition = 'none'; // Disable transition for instant position update
+    HeroImage.style.transform = `translateX(100%)`; // Start new image off-screen to the right
+    setTimeout(() => {
+        HeroImage.src = images[currentIndex];
+        HeroImage.style.transition = 'transform 1s ease'; // Re-enable smooth transition
+        HeroImage.style.transform = `translateX(0)`; // Slide image into view
+    }, 50); // Delay allows transform effect to reset
+ }
+
+// Auto-slide functionality
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateHeroImage();
+}
+
+// Event listeners for arrow clicks
+rightArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateHeroImage();
+    resetAutoSlide();
+});
+
+leftArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateHeroImage();
+    resetAutoSlide();
+});
+
+// Initialize with the first image
+updateHeroImage();
+
+// Start auto-slide every 3 seconds
+let autoSlideInterval = setInterval(autoSlide, 4000);
+
+// Reset auto-slide timer after manual navigation
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(autoSlide, 4000);
+}
+
+
+
+const images = ['images/main.jpeg', 'images/recipe-1.jpeg', 'images/recipe-2.jpeg'];
 // This array holds the URLs of the images.
 let currentIndex = 0;
 // keeps track of which image is currently showing. It starts at 0, showing the first image.
