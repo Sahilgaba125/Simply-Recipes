@@ -138,6 +138,12 @@ h5 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top */
+  background-color: var(--backgroundColor); /* so it doesnt take wrapper content as background */
+  box-shadow: var(--shadow-1); /* Adds a subtle shadow for clarity */
+  width: 100%; /*  to ensure it stretches across the viewport instead of wrapping around its content. */
 }
 
 .nav-wrapper {
@@ -240,9 +246,10 @@ a{
   size on larger screens (with 1120px as the cap). This approach is often used to control content width on both mobile and desktop. */
   width:90vw;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 7rem;
   min-height: calc(100vh - (6rem + 4rem)); 
 }
+
 .main-hero {
   position: relative;
   height: 40vh;
