@@ -80,6 +80,15 @@
           </a>
      </div>
   </section>
+  <button class="open-modal-btn">Open Modal</button>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-modal-btn">&times;</span>
+        <h2>Modal Title</h2>
+        <p>This is a modal example.</p>
+    </div>
+</div>
+
 </main>
 
   <footer class="footer" >
@@ -114,6 +123,25 @@
 // Select the form element instead of the button
 // Listen for the form's submit event  and gives you more control over the submission.Ensures that all validation checks happen before the form is submitted.
   form.addEventListener("submit", validateForm);
+
+  const openModalBtn = document.querySelector('.open-modal-btn');
+const modal = document.querySelector('.modal');
+const closeModalBtn = document.querySelector('.close-modal-btn');
+
+openModalBtn.addEventListener('click', () => {
+    modal.classList.add('show');
+});
+
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('show');
+});
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('show');
+    }
+});
+
 
  </script>
  <script src="Main.js"></script>
