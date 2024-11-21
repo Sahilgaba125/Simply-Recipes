@@ -333,10 +333,13 @@ you might not need display: block;. But adding it ensures that even empty space 
   margin: 0;
   margin-bottom: 0.5rem; 
   padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
+  0 6px 20px rgba(0, 0, 0, 0.19); /* Dual shadows for added depth */
+  transition: scale 0.3s ease-in-out;
 
 }
 .recipe-img:hover{
-  border:3px solid gray;
+  transform: scale(1.05);
 }
 
 .recipe h5 {
@@ -635,7 +638,7 @@ margin: 0;
 .dropdown-toggle {
   padding: 0.5rem 1rem;
   border: 1px solid #ccc;
-  background-color: lightblue
+  background-color: lightblue;
   cursor: pointer;
 }
 
