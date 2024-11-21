@@ -72,7 +72,7 @@
       </div>
     </div>
   
-    <div class="dropdown">
+    <div class="dropdown dropdown-left">
       <button class="dropbtn-right contact-btn">Menu 2</button>
       <div class="dropdown-content">
         <a href="#">Link A</a>
@@ -80,14 +80,23 @@
         <a href="#">Link C</a>
       </div>
     </div>
-    <div class="faq">FAQ 1 Content</div>
-    <div class="faq">FAQ 2 Content</div>
-    <style>
-        .faq:target {
-          background-color: black;
-       }
-    </style>
+    <div class="dropdown-container">
+      <button class="dropdown-toggle contact-btn">Toggle Dropdown</button>
+      <div class="submenu display-style">
+        <p>Dropdown Item 1</p>
+        <p>Dropdown Item 2</p>
+        <p>Dropdown Item 3</p>
+      </div>
+    </div>
   
+    <div class="dropdown-container">
+      <button class="dropdown-toggle contact-btn">Toggle Dropdown</button>
+      <div class="submenu visibility-style">
+        <p>Dropdown Item 1</p>
+        <p>Dropdown Item 2</p>
+        <p>Dropdown Item 3</p>
+      </div>
+    </div>
   </main>
  
   <footer class="footer" >
@@ -117,6 +126,15 @@
     toggleButton.textContent = 'Read More';
   }
 });
+document.querySelectorAll('.dropdown-container').forEach((container) => {
+  const toggleButton = container.querySelector('.dropdown-toggle');
+  const submenu = container.querySelector('.submenu');
+
+  toggleButton.addEventListener('click', () => {
+    submenu.classList.toggle('show');
+  });
+});
+
   </script>
 
 </body>
