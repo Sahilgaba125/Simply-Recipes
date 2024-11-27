@@ -106,16 +106,12 @@ h4 {
 h5 {
   font-size: 1.25rem;
 }
-
-
 .img {
   border-radius: var(--borderRadius);
   width: 100%;
   object-fit: cover;
   display: block;
 }
-
-
 .contact-btn {
   background-color: var(--primaryColor);
   color: var(--buttonTextColor);
@@ -197,13 +193,13 @@ a{
   padding: 1rem;
   text-align: center;
   border-bottom: 2px solid black;
-  display: block;
   transition: var(--transition);
   text-transform: capitalize;
 }
 .nav-link:hover {
   color: var(--primary-500);
 }
+
 /* Submenu styles */
 .submenu-links {
   display: none; /* Initially hidden */
@@ -212,7 +208,12 @@ a{
 }
 
 .submenu.show-submenu .submenu-links {
-  display: block; /* Show submenu on toggle */
+  display: flex; /* Show submenu on toggle */
+}
+.submenu-links a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--textColor);
 }
 
 
@@ -253,6 +254,8 @@ a{
     position: absolute;
     top: 100%;
     left: 0;
+    background-color: var(--lightGrayColor);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: none; /* Hide submenu on desktop by default */
   }
 
@@ -663,7 +666,7 @@ margin: 0;
   cursor: pointer;
 }
 
-.submenu {
+/*.submenu {
   position: absolute;
   top: 100%;
   left: 0;

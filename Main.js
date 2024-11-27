@@ -34,21 +34,22 @@ document.querySelector('.right-arrow-container').addEventListener('click', nextI
 
 
 (function () {
-    // Elements
-    const hamburger = document.querySelector('.hamburger-menu');
-    const navLinks = document.querySelector('.nav-links');
-    const submenuToggle = document.querySelector('.submenu-toggle');
-    const submenu = document.querySelector('.submenu');
-  
-    // Toggle hamburger menu
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show-links');
-    });
-  
-    // Toggle submenu on mobile
-    submenuToggle.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent the link from navigating
-      submenu.classList.toggle('show-submenu');
-    });
-  })();
+  // Elements
+  const hamburger = document.querySelector('.hamburger-menu');
+  const navLinks = document.querySelector('.nav-links');
+  const submenuToggle = document.querySelector('.submenu-toggle');
+  const submenu = document.querySelector('.submenu');
+
+  // Toggle hamburger menu
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show-links');
+  });
+
+  // Toggle submenu on mobile
+  submenuToggle.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    submenu.classList.toggle('show-submenu');
+  });
+})();
+
   
