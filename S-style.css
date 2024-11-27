@@ -204,6 +204,17 @@ a{
 .nav-link:hover {
   color: var(--primary-500);
 }
+/* Submenu styles */
+.submenu-links {
+  display: none; /* Initially hidden */
+  padding-left: 1rem;
+  background-color: var(--lightGrayColor);
+}
+
+.submenu.show-submenu .submenu-links {
+  display: block; /* Show submenu on toggle */
+}
+
 
 /* Header on desktop */
 @media screen and (min-width: 768px) {
@@ -238,6 +249,17 @@ a{
   .hamburger-menu {
     display: none; /* Hide hamburger menu on desktop */
   }
+  .submenu-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none; /* Hide submenu on desktop by default */
+  }
+
+  .submenu:hover .submenu-links {
+    display: block; /* Show submenu on hover for desktop */
+  }
+
 }
 /* Wrappers */
 
@@ -638,7 +660,6 @@ margin: 0;
 .dropdown-toggle {
   padding: 0.5rem 1rem;
   border: 1px solid #ccc;
-  background-color: lightblue;
   cursor: pointer;
 }
 
@@ -657,7 +678,7 @@ margin: 0;
 /* 1. Display: none/block (Simple Approach) */
 .display-style {
   display: none;
-  transform: translateY(-10px);
+  transform: translateY(-1000px);
   transition: transform 0.3s ease; /* Entry animation */
 }
 
@@ -680,6 +701,8 @@ margin: 0;
   transform: translateY(0);
 }
 
+
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -693,6 +716,9 @@ margin: 0;
 .hero-text {
   animation: fadeIn 1.5s ease-out;
 }
+
+
+
 .modal {
   display: none;
   position: fixed;

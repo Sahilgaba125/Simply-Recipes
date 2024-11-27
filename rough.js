@@ -1,3 +1,20 @@
+(function () {
+  // Selecting elements
+  const hamburger = document.querySelector('.hamburger-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  // Event listener for the hamburger menu
+  hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show-links'); // Toggles 'show-links' class to display or hide the nav links
+  // Initial State (display: none;):
+  // 
+  });
+})();
+
+
+
+
+
 const images = ['images/main.jpeg', 'images/recipe-1.jpeg', 'images/recipe-2.jpeg'];
 let currentIndex = 0;
 const HeroImage = document.querySelector('.hero-image');
@@ -52,6 +69,9 @@ function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(autoSlide, 10000);
 }
+
+
+
 
 
 

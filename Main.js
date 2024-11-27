@@ -34,15 +34,21 @@ document.querySelector('.right-arrow-container').addEventListener('click', nextI
 
 
 (function () {
-  // Selecting elements
-  const hamburger = document.querySelector('.hamburger-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  // Event listener for the hamburger menu
-  hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show-links'); // Toggles 'show-links' class to display or hide the nav links
-  // Initial State (display: none;):
-  // 
-  });
-})();
-
+    // Elements
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const submenuToggle = document.querySelector('.submenu-toggle');
+    const submenu = document.querySelector('.submenu');
+  
+    // Toggle hamburger menu
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show-links');
+    });
+  
+    // Toggle submenu on mobile
+    submenuToggle.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent the link from navigating
+      submenu.classList.toggle('show-submenu');
+    });
+  })();
+  

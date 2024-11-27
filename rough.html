@@ -1,126 +1,22 @@
-<header class="main-hero">
-  <div class="hero-container">
-      <div class="hero-text">
-          <h1>Simply Recipes</h1>
-          <h4>No Fluff, Just Recipes</h4>
-      </div>
-      <img class="hero-image" src="images/main.jpeg" alt="Hero Image" />
-      
-      <div class="left-arrow-container">
-        <div class="left-arrow">◀</div>
+
+<nav class="header">
+  <div class="nav-wrapper">
+    <div class="nav-header">
+       <a href="index.html"> 
+         <img src="images/logo.svg" id="logo" alt="Simply Recipes">
+       </a>
+       <button type="button" class="hamburger-menu contact-btn">
+        <i class="fas fa-align-justify"></i> <!-- Icon for hamburger menu -->
+       </button>
     </div>
-    <div class="right-arrow-container">
-        <div class="right-arrow">▶</div>
+     <div class="nav-links">
+       <a class="nav-link" href="index.html">Home</a>
+       <a class="nav-link" href="About.html">About</a>
+       <a class="nav-link" href="Tags.html">Tags</a>
+       <a class="nav-link" href="#">Recipes</a>
+       <div class="nav-link contact-link">
+         <a class="contact-btn index-contact" href="contact.html">Contact</a>
+       </div>
     </div>
   </div>
-</header>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Simply Recipes </title>
-    <link rel="stylesheet" href="rough.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
-</head>
-
-<body>
-  
-  <nav class="header">
-   <div class="nav-wrapper">
-     <div class="nav-header">
-        <a href="index.html"> 
-          <img src="images/logo.svg" id="logo" alt="Simply Recipes">
-        </a>
-        <button type="button" class="hamburger-menu contact-btn">
-         <i class="fas fa-align-justify"></i> <!-- Icon for hamburger menu -->
-        </button>
-     </div>
-      <div class="nav-links">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="About.html">About</a>
-        <a class="nav-link" href="Tags.html">Tags</a>
-        <a class="nav-link" href="#">Recipes</a>
-        <div class="nav-link contact-link">
-          <a class="contact-btn" href="contact.html">Contact</a>
-        </div>
-     </div>
-   </div>
-  </nav>
-   
-       
-  <main class="wrapper">
-    <header class="main-hero">
-      <div class="hero-container">
-        <div class="hero-text">
-          <h1>Simply Recipes</h1>
-          <h4>No Fluff, Just Recipes</h4>
-        </div>
-    
-        <!-- Slideshow Images controlled by radio buttons -->
-        <input type="radio" name="slide" id="slide1" checked />
-        <input type="radio" name="slide" id="slide2" />
-        <input type="radio" name="slide" id="slide3" />
-    
-        <!-- Image containers -->
-        <div class="slide" style="background-image: url('images/main.jpeg');"></div>
-        <div class="slide" style="background-image: url('images/recipe-1.jpeg');"></div>
-        <div class="slide" style="background-image: url('images/recipe-2.jpeg');"></div>
-    
-        <!-- Arrows for navigation -->
-        <label for="slide3" class="left-arrow-container">
-          <div class="left-arrow">◀</div>
-        </label>
-        <label for="slide2" class="right-arrow-container">
-          <div class="right-arrow">▶</div>
-        </label>
-      </div>
-    </header>
-    
-  
-        
-    <section class="main">
-            <div class="recipes">
-             <h4> Recipes</h4>
-             <div class="tags-list">
-                <a href="/"> Beef (1) </a>
-                <a href="/"> Chicken (2) </a>
-                <a href="/"> Pork (3) </a>
-                <a href="/">Vegetarian (4) </a>
-             </div> 
-            </div>
-        
-             <div class='images'>
-                 <a class= 'recipe' href="Recipe.html" >
-                   <img src="images/recipe-1.jpeg" class="img recipe-img" >
-                   <h5>Carne Asada</h5>
-                   <p>Prep : 15min | Cook : 5min</p>
-                 </a>
-                 <a class="recipe" href="/single-recipe" >
-                   <img src="images/recipe-2.jpeg" class="img recipe-img">
-                   <h5>Greek Ribs</h5>
-                   <p>Prep : 15min | Cook : 5min</p>
-                 </a>
-                 <a class="recipe" href="/single-recipe" >
-                   <img src="images/recipe-3.jpeg" class="img recipe-img">
-                   <h5>Vegetable Soup</h5>
-                  <p>Prep : 15min | Cook : 5min</p>
-                 </a>
-                 <a class="recipe" href="/single-recipe">
-                   <img src="images/recipe-4.jpeg"class="img recipe-img">
-                   <h5>Banana Pancakes</h5>
-                   <p>Prep : 15min | Cook : 5min</p>
-                 </a>
-              </div>
-    </section>
-  </main>
-  
-  <footer class="footer" >
-    <p> © 2024 SimplyRecipes Built by Coding Addict </p>
-  </footer>
-
-</body>
-</html>
-
-
+ </nav>
