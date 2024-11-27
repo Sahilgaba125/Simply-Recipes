@@ -202,19 +202,22 @@ a{
 
 /* Submenu styles */
 .submenu-links {
-  display: none; /* Initially hidden */
-  padding-left: 1rem;
+  visibility: hidden;
+  opacity: 0;
   background-color: var(--lightGrayColor);
+  transform: translate(-5px);
+ 
 }
 
 .submenu.show-submenu .submenu-links {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  transform: translate(0px);
   display: flex; /* Show submenu on toggle */
+  justify-content: space-evenly;
 }
-.submenu-links a {
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: var(--textColor);
-}
+
 
 
 /* Header on desktop */
@@ -250,19 +253,28 @@ a{
   .hamburger-menu {
     display: none; /* Hide hamburger menu on desktop */
   }
+  .submenu{
+    position: relative;
+  }
   .submenu-links {
     position: absolute;
-    top: 100%;
+    top: 25;
     left: 0;
-    background-color: var(--lightGrayColor);
+    background-color: gray;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    display: none; /* Hide submenu on desktop by default */
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-5px);
   }
-
-  .submenu:hover .submenu-links {
-    display: block; /* Show submenu on hover for desktop */
+  .submenu.show-submenu .submenu-links{
+    display: block;
+    z-index: 1000;
+    padding: 1rem;
+    visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  transform: translate(0px);
   }
-
 }
 /* Wrappers */
 
@@ -396,10 +408,8 @@ you might not need display: block;. But adding it ensures that even empty space 
   column-gap: 0.5rem;
 }
 .tags-list a{
-    
-    color: var(--grey-500); 
-    transition: var(--transition); /* So all a links , which look like button gets this smoothness */
-    
+  color: var(--grey-500); 
+  transition: var(--transition); /* So all a links , which look like button gets this smoothness */
 }
 .tags-list a:hover{
   color: var(--primary-500);
