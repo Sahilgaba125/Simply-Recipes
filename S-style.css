@@ -202,18 +202,11 @@ a{
 
 /* Submenu styles */
 .submenu-links {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   background-color: var(--lightGrayColor);
-  transform: translate(-5px);
- 
 }
 
 .submenu.show-submenu .submenu-links {
-  visibility: visible;
-  opacity: 1;
-  transition: all 0.2s ease-in-out;
-  transform: translate(0px);
   display: flex; /* Show submenu on toggle */
   justify-content: space-evenly;
 }
@@ -258,22 +251,37 @@ a{
   }
   .submenu-links {
     position: absolute;
-    top: 25;
+    display: block;
+    
+    top: 25px;
     left: 0;
     background-color: gray;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     visibility: hidden;
     opacity: 0;
     transform: translate(-5px);
+    transition: all .3s ease-in-out;
   }
-  .submenu.show-submenu .submenu-links{
-    display: block;
+  .submenu:hover .submenu-links{
+  
     z-index: 1000;
     padding: 1rem;
     visibility: visible;
-  opacity: 1;
-  transition: all 0.3s ease-in-out;
-  transform: translate(0px);
+    opacity: 1;
+
+    transform: translate(0px);
+  }
+  .submenu-links a {
+    display: block; /* Each link takes up a whole line */
+    padding: 0.5rem 1rem; /* Add padding for better spacing */
+    text-align: left; /* Optional: Align text */
+    
+
+  }
+  
+  .submenu-links a:hover {
+    background-color: var(--primaryColor); /* Highlight background on hover */
+    color: white; /* Change text color on hover */
   }
 }
 /* Wrappers */
