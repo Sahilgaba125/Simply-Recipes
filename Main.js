@@ -1,21 +1,35 @@
 // 1. Image Swap 2. Form validation. 3. Read more. 4. Hamburger 5. Hero Caraousel.
 
-// Select all navigation links
+document.addEventListener('scroll', () => {
+  const recipes = document.querySelectorAll('.recipe');
+
+  recipes.forEach(recipe => {
+     if (recipe.getBoundingClientRect().top < window.innerHeight) {
+        recipe.classList.add('animate');
+     }
+  });
+});
+
+
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', e => {
     const targetLink = e.currentTarget; // Ensure the correct link element
     const isInternal = targetLink.href.includes(window.location.hostname);
+    
+    // Check screen size before applying animation
+    const isSmallScreen = window.innerWidth < 768;
 
-    if (isInternal) {
+    if (isInternal && isSmallScreen) { // Only apply fade-out for small screens
       e.preventDefault(); // Prevent default navigation
-      document.body.style.animation = "bodyFadeOut 0.5s ease-in-out forwards";
+      document.body.style.animation = "bodyFadeOut 0.3s ease-in-out forwards";
 
       setTimeout(() => {
         window.location.href = targetLink.href; // Navigate after fade-out completes
-      }, 500); // Match the duration of the fade-out animation
+      }, 300); // Match the duration of the fade-out animation
     }
   });
 });
+
 
 
 

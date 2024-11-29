@@ -69,7 +69,7 @@ html, body {
   min-height: 100vh;
   overflow-x: hidden;  /* Prevent horizontal scrolling */
   opacity: 1;
-  animation: bodyFadeIn 0.5s ease-in-out forwards;
+  animation: bodyFadeIn 0.3s ease-in-out forwards;
 }
 /* Keyframes for fade in and fade out */
 @keyframes bodyFadeIn {
@@ -87,6 +87,11 @@ html, body {
   }
   to {
     opacity: 0;
+  }
+}
+@media (min-width: 768px) {
+  html, body {
+    animation: none !important;
   }
 }
  p {
@@ -402,9 +407,28 @@ a{
   display: grid; 
   row-gap: 2rem;
 }
-.recipe{
- display: block; /*  if the anchor tag already contains an image and the image naturally takes up the space you want to be clickable, then
-you might not need display: block;. But adding it ensures that even empty space around the image within the anchor tag will also be clickable.*/
+.recipe {
+  display: block; /*  if the anchor tag already contains an image and the image naturally takes up the space you want to be clickable, then
+  you might not need display: block;. But adding it ensures that even empty space around the image within the anchor tag will also be clickable.*/
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeSlide 1s forwards;
+}
+/* Animation triggered by adding the .animate class */
+.recipe.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Keyframes for fade and slide effect */
+@keyframes fadeSlide {
+  from {
+     opacity: 0;
+     transform: translateX(50px);
+  }
+  to {
+     opacity: 1;
+     transform: translateX(0);
+  }
 }
 .recipe-img {
   height: 15rem;
@@ -513,6 +537,25 @@ you might not need display: block;. But adding it ensures that even empty space 
 .about-hero-text h2{
   font-weight: bold;
 }
+.bouncing-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #333;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+     transform: translateY(0);
+  }
+  50% {
+     transform: translateY(-10px);
+  }
+}
+
 .featured-recipes {
   margin-bottom: 2rem;
 }
@@ -829,3 +872,4 @@ margin: 0;
   }  */
   /*The .images .recipe img style still uses height: 10rem; and width: 100%; with object-fit: cover;, which maintains responsiveness.
   The .recipe container remains with its max-width: 15rem;, so images should maintain their layout and size on larger screens.
+  
