@@ -411,13 +411,14 @@ a{
   display: block; /*  if the anchor tag already contains an image and the image naturally takes up the space you want to be clickable, then
   you might not need display: block;. But adding it ensures that even empty space around the image within the anchor tag will also be clickable.*/
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateX(50px);
   animation: fadeSlide 1s forwards;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animation */
 }
 /* Animation triggered by adding the .animate class */
 .recipe.animate {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 /* Keyframes for fade and slide effect */
 @keyframes fadeSlide {
@@ -524,7 +525,9 @@ a{
 }
 
 /* About-wrapper */
-
+.about-hero{
+  position: relative
+}
 .about-hero img {
   height: 19rem;
   width: 100%;
@@ -545,6 +548,7 @@ a{
   font-size: 24px;
   color: #333;
   animation: bounce 1.5s infinite;
+  z-index: 100;
 }
 
 @keyframes bounce {

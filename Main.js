@@ -1,14 +1,23 @@
 // 1. Image Swap 2. Form validation. 3. Read more. 4. Hamburger 5. Hero Caraousel.
 
-document.addEventListener('scroll', () => {
-  const recipes = document.querySelectorAll('.recipe');
+document.addEventListener('DOMContentLoaded', () => {
+  const recipes = document.querySelectorAll('.recipe'); // Select all recipes
 
-  recipes.forEach(recipe => {
-     if (recipe.getBoundingClientRect().top < window.innerHeight) {
-        recipe.classList.add('animate');
-     }
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add animation class to the element when it enters the viewport
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  }, {
+    threshold: 0.8, // Trigger animation when 80% of the element is visible
   });
+
+  recipes.forEach(recipe => observer.observe(recipe)); // Observe each recipe element
 });
+
 
 
 document.querySelectorAll('.nav-link').forEach(link => {
