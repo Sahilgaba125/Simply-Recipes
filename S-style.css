@@ -68,8 +68,27 @@ html, body {
   padding: 0;
   min-height: 100vh;
   overflow-x: hidden;  /* Prevent horizontal scrolling */
+  opacity: 1;
+  animation: bodyFadeIn 0.5s ease-in-out forwards;
+}
+/* Keyframes for fade in and fade out */
+@keyframes bodyFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+@keyframes bodyFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
  p {
   margin-bottom: 1.5rem;
   max-width: 40em; /*Limits the width of the paragraph text for better readability on larger screens, ensuring lines aren't too long. */
@@ -195,9 +214,11 @@ a{
   border-bottom: 2px solid black;
   transition: var(--transition);
   text-transform: capitalize;
+  transition: all 0.3s ease;
 }
 .nav-link:hover {
   color: var(--primary-500);
+  transform: scale(1.1);
 }
 
 /* Submenu styles */
@@ -337,7 +358,19 @@ a{
   z-index: 1;
   text-align: center;
   font-size: 1.5rem;
+  animation: fadeIn 1.5s ease-in-out; 
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .left-arrow-container, .right-arrow-container {
   position: absolute;
@@ -549,7 +582,18 @@ you might not need display: block;. But adding it ensures that even empty space 
 }
 .tag:hover {
   background: var(--primary-500);
+  animation: glow 1s infinite alternate;
 }
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #1c7531;
+  }
+  100% {
+    box-shadow: 0 0 200px #2ba021;
+  }
+}
+
+
 .tag h5, .tag p {
 color: white; /*the , in CSS separates distinct selectors. So without, .tag p--> It would select h5 from .tag but all p, not just this one.
 can also use .tag > *     */
@@ -724,19 +768,7 @@ margin: 0;
 
 
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.hero-text {
-  animation: fadeIn 1.5s ease-out;
-}
+
 
 
 

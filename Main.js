@@ -1,5 +1,24 @@
 // 1. Image Swap 2. Form validation. 3. Read more. 4. Hamburger 5. Hero Caraousel.
 
+// Select all navigation links
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    const targetLink = e.currentTarget; // Ensure the correct link element
+    const isInternal = targetLink.href.includes(window.location.hostname);
+
+    if (isInternal) {
+      e.preventDefault(); // Prevent default navigation
+      document.body.style.animation = "bodyFadeOut 0.5s ease-in-out forwards";
+
+      setTimeout(() => {
+        window.location.href = targetLink.href; // Navigate after fade-out completes
+      }, 500); // Match the duration of the fade-out animation
+    }
+  });
+});
+
+
+
 const images = document.querySelectorAll('.hero-image');
 let currentIndex = 0;
 const intervalTime = 10000;
