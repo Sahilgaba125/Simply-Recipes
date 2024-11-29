@@ -1,22 +1,27 @@
 // 1. Image Swap 2. Form validation. 3. Read more. 4. Hamburger 5. Hero Caraousel.
 
-document.addEventListener('DOMContentLoaded', () => {
-  const recipes = document.querySelectorAll('.recipe'); // Select all recipes
+// Select all recipe elements
+const recipes = document.querySelectorAll('.recipe');
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+// Create IntersectionObserver to observe each element
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Add animation class to the element when it enters the viewport
+        // Add 'animate' class when the element enters the viewport
         entry.target.classList.add('animate');
-        observer.unobserve(entry.target); // Stop observing once animated
+        // Stop observing the element once it has been animated
+        observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.8, // Trigger animation when 80% of the element is visible
-  });
+  },
+  {
+    threshold: 0.2, // Trigger when 20% of the element is visible
+  }
+);
 
-  recipes.forEach(recipe => observer.observe(recipe)); // Observe each recipe element
-});
+// Attach the observer to each recipe element
+recipes.forEach((recipe) => observer.observe(recipe));
 
 
 
