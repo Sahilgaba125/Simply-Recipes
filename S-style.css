@@ -595,15 +595,42 @@ a{
 }
 .form-input, .form-textarea{
   background-color: var(--backgroundColor);
-  border: 1px solid  #e2e8f0;
+  border: 2px solid var(--grey-300);
   padding: 0.375rem 0.75rem;
   resize: none; /* Prevents resizing of the textarea */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--borderRadius);
 }
-.form-input:focus{
-  border: 3px solid #555;
+.form-input:focus ,
+.form-textarea:focus {
+  border-color: var(--primaryColor);
+  box-shadow: 0 0 5px rgba(100, 92, 255, 0.5);
 }
+
+
 .btn-block{
   width: 100%;
+}
+/* Pulsing animation */
+.pulsing-icon {
+  animation: pulse 1.5s infinite;
+  font-size: 1.5rem;
+  
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @media (min-width: 768px){

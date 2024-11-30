@@ -55,7 +55,7 @@
               <textarea name="message" class="form-textarea message-textarea"></textarea>
             </div>
             <button type="submit" class="contact-btn btn-block">
-              submit
+              <span class="pulsing-icon">✉</span> submit 
             </button>
           </form>
         </article> 
@@ -141,6 +141,11 @@ modal.addEventListener('click', (e) => {
         modal.classList.remove('show');
     }
 });
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(emailInput.value)) {
+  emailInput.style.border = "3px solid orange"; // Highlight incorrect format
+  valid = false;
+}
 
 
  </script>
