@@ -3,14 +3,14 @@
 // Select all recipe elements
 const recipes = document.querySelectorAll('.recipe');
 
-// Create IntersectionObserver to observe each element
+// Create IntersectionObserver
 const observer = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        // Add 'animate' class when the element enters the viewport
+        // Add 'animate' class with a delay
+        entry.target.style.animationDelay = `${index * 0.2}s`; // Staggered delay
         entry.target.classList.add('animate');
-        // Stop observing the element once it has been animated
         observer.unobserve(entry.target);
       }
     });
@@ -20,8 +20,11 @@ const observer = new IntersectionObserver(
   }
 );
 
-// Attach the observer to each recipe element
+console.log('JavaScript is running!');
+
+// Attach observer to each recipe element
 recipes.forEach((recipe) => observer.observe(recipe));
+
 
 
 
