@@ -1,6 +1,5 @@
 // 1. Image Swap 2. Form validation. 3. Read more. 4. Hamburger 5. Hero Caraousel.
 
-// Select all recipe elements
 const recipes = document.querySelectorAll('.recipe');
 
 // Create IntersectionObserver
@@ -8,22 +7,27 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        // Add 'animate' class with a delay
-        entry.target.style.animationDelay = `${index * 0.2}s`; // Staggered delay
+        // Dynamically stagger animations as elements enter viewport
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+        entry.target.style.animationPlayState = 'running'; // Ensure animation runs only when class is added
         entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
+        observer.unobserve(entry.target); // Stop observing once animated
       }
     });
   },
   {
-    threshold: 0.2, // Trigger when 20% of the element is visible
+    threshold: 0.4, // Trigger when 40% of the element is visible
+    rootMargin: "0px 0px -20% 0px", // Fine-tune trigger based on viewport
   }
 );
 
 console.log('JavaScript is running!');
 
-// Attach observer to each recipe element
-recipes.forEach((recipe) => observer.observe(recipe));
+// Set initial animation state for all recipes
+recipes.forEach((recipe) => {
+  recipe.style.animationPlayState = 'paused'; // Pause animation initially
+  observer.observe(recipe); // Attach observer
+});
 
 
 

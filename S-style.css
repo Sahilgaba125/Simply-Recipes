@@ -414,6 +414,7 @@ a{
   transform: translateX(100px);
   animation: fadeSlide 1.5s ease-out forwards;
   visibility: hidden;
+  animation-play-state: paused; /* Pause animation by default */
 }
 /* Animation triggered by adding the .animate class */
 /* Triggered when the element enters the viewport */
@@ -422,6 +423,7 @@ a{
   transform: translateX(0);
   visibility: visible;
   animation-delay: 0.2s; /* Stagger the animations */
+  animation-play-state: running;
 }
 /* Keyframes for fade and slide effect */
 @keyframes fadeSlide {
