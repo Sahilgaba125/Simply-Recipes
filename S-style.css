@@ -539,7 +539,6 @@ a{
   object-fit: cover;
   border-radius: 0.25rem;
   display: block;
-
   margin-top: 2rem;
 }
 .about-hero-text h2{
@@ -572,11 +571,10 @@ a{
    text-align: center; /*increases specificity by selecting only the direct child of an element, rather than all descendants. */
 }
 @media (min-width: 768px){
-  .about-hero{
+  .about-hero, .recipe-hero{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap:2rem;
-   
   }
    }
 /* contact page */
@@ -696,7 +694,9 @@ margin: 0;
 .recipe-hero{
   display: grid;
 }
-
+.recipe-hero-img{
+  height: 300px;
+  }
 .recipe-icons{
   display: grid;
   grid-template-columns:  repeat(3, 1fr);
@@ -718,7 +718,6 @@ margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-
 }
 .recipe-tags a {
  
@@ -735,17 +734,40 @@ margin: 0;
   display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
+    gap:1.5rem;
 }
 .step div {
   height: 2px;
   background: var(--grey-300);
+
+
 }
 .step p{
   color: var(--primary-500)
 }
 .second-column p{
   border-bottom: 1px solid gray;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+.tools p{
   color: var(--primary-500);
+}
+@media (min-width: 768px){
+  .recipe-hero{
+    grid-template-columns: 4fr 5fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .recipe-hero-img{
+    height: 300px;
+  }
+  
+  .recipe-section{
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+ 
 }
 /* Footer */
 .footer {
