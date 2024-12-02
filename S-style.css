@@ -8,7 +8,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&family=Nunito:wght@400&display=swap');
 html {
-  font-size: 100%; /* only imported 400 for nunito , as has used it as body font weight VS 3 for roboto, because its heading and its needed.
+  font-size: 100%; /* only imported 400 for nunito , as has used it as body font weight VS 3 for roboto, because its heading and its needed.*/
+  color-scheme: light dark;
 } 
 :root {
   /* Fonts */

@@ -1,4 +1,4 @@
-// 1. Image Swap 2. Form validation. 3. Read more. 4. Hamburger 5. Hero Caraousel.
+// 1. Form validation. 2. Single Read more. 3. Hamburger menu 4. Hero Caraousel/Slider. 5. Scroll based animation.
 
 const recipes = document.querySelectorAll('.recipe');
 

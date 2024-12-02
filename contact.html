@@ -45,14 +45,17 @@
             <div class="form-row">
               <label class="form-label"> Your name</label>
               <input type="text" name="name" class="form-input name-input" />
+              <span class="error-message name-error"></span>
             </div>
             <div class="form-row">
               <label class="form-label"> Your email</label>
               <input type="email" name="email" class="form-input email-input" />
+              <span class="error-message email-error"></span>
             </div>
             <div class="form-row">
-              <label class="form-label"> Message</label>
+              <label class="form-label"> Message (Optional) </label>
               <textarea name="message" class="form-textarea message-textarea"></textarea>
+              <span class="error-message message-error"></span>
             </div>
             <button type="submit" class="contact-btn btn-block">
               <span class="pulsing-icon">✉</span> submit 
@@ -103,26 +106,67 @@
     navLinks.classList.toggle('show-links'); // Toggles 'show-links' class to display or hide the nav links
     }); 
     
-   const form = document.querySelector(".contact-form");
-   
-   function validateForm(event) {
-   const nameInput = document.querySelector(".name-input");
-   const emailInput = document.querySelector(".email-input");
+    const form = document.querySelector(".contact-form");
+    const nameInput = document.querySelector(".name-input");
+    const emailInput = document.querySelector(".email-input");
 
-   if (nameInput.value === "" || emailInput.value === "") // // If either field is empty, show an alert
-  {
-    alert("Please fill in both name and email fields Bitch!");
-    event.preventDefault();  // Prevent form submission if fields are empty
-    nameInput.style.border=  "3px solid red";
-    emailInput.style.border= "3px solid red";
-  } 
-  else {
+
+// Function to validate the name field
+function validateName() {
+  const nameError = document.querySelector(".name-error");
+  if (nameInput.value.trim() === "") {
+    nameError.textContent = "Name is required.";
+    nameInput.style.border = "3px solid red";
+    return false;
+  } else {
+    nameError.textContent = ""; // Clear error message
+    nameInput.style.border = "3px solid green"; // Mark as valid
+    return true;
+  }
+}
+
+// Function to validate the email field
+function validateEmail() {
+  const emailError = document.querySelector(".email-error");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for valid email
+  if (emailInput.value.trim() === "") {
+    emailError.textContent = "Email is required.";
+    emailInput.style.border = "3px solid red";
+    return false;
+  } else if (!emailRegex.test(emailInput.value.trim())) {
+    emailError.textContent = "Enter a valid email address.";
+    emailInput.style.border = "3px solid red";
+    return false;
+    //trim Removes any extra//accidental whitespace by user from the start and end of the input. 
+  } else {
+    emailError.textContent = ""; // Clear error message
+    emailInput.style.border = "3px solid green"; // Mark as valid
+    return true;
+  }
+}
+
+// Main form validation function
+function validateForm(event) {
+  const isNameValid = validateName();
+  const isEmailValid = validateEmail();
+
+  // Prevent submission if any field is invalid
+  if (!isNameValid || !isEmailValid) {
+    event.preventDefault();
+    alert("Please fix the errors before submitting.");
+  } else {
     alert("Form submitted successfully!");
   }
 }
-// Select the form element instead of the button
-// Listen for the form's submit event  and gives you more control over the submission.Ensures that all validation checks happen before the form is submitted.
-  form.addEventListener("submit", validateForm);
+
+// Add event listeners for real-time validation
+nameInput.addEventListener("input", validateName);
+emailInput.addEventListener("input", validateEmail);
+
+// Add event listener for form submission
+form.addEventListener("submit", validateForm);
+
+
 
   const openModalBtn = document.querySelector('.open-modal-btn');
 const modal = document.querySelector('.modal');
@@ -141,11 +185,7 @@ modal.addEventListener('click', (e) => {
         modal.classList.remove('show');
     }
 });
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if (!emailRegex.test(emailInput.value)) {
-  emailInput.style.border = "3px solid orange"; // Highlight incorrect format
-  valid = false;
-}
+
 
 
  </script>
