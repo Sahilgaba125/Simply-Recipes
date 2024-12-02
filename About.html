@@ -33,7 +33,7 @@
      </nav>
    
   <main class="wrapper">
-       <section class='about-hero'>
+    <section class='about-hero'>
           <article class="about-hero-text">
              <h2> I'm baby coloring book <br> poke taxidermy </h2>
              <p> Taxidermy forage glossier letterpress heirloom before they sold out you probably haven't heard of them banh mi biodiesel chia. <br> <br> Taiyaki tumblr flexitarian jean shorts brunch, aesthetic salvia retro. </p>
@@ -41,34 +41,121 @@
           </article>
           <img src="images/recipe-1.jpeg" class="about-hero-image">
           <div class="bouncing-arrow">⬇</div>  
-       </section>
+    </section>
        
-       <section class="featured-recipes">
-          <h5>Look At This Awesomesouce!</h5>
-          <div class="images">
-              <a class= 'recipe' href="/single-recipe" >
-                 <img src="images/recipe-1.jpeg" class="img recipe-img">
-                 <h5>Carne Asada</h5>
-                  <p>Prep : 15min | Cook : 5min</p>
-              </a>
-              <a class="recipe" href="/single-recipe" >
-                 <img src="images/recipe-2.jpeg" class="img recipe-img">
-                  <h5>Greek Ribs</h5>
-                  <p>Prep : 15min | Cook : 5min</p>
-              </a>
-              <a class="recipe" href="/single-recipe" >
-                 <img src="images/recipe-3.jpeg" class="img recipe-img">
-                 <h5>Vegetable Soup</h5>
-                 <p>Prep : 15min | Cook : 5min</p>
-              </a>
-          </div>
-       </section>
+    <section class="faq-section">
+         <h3>"Got Questions? Check Out Our FAQs"</h3>
+       
+         <div class="faq-item">
+           <button class="faq-question">
+             What types of recipes are available?
+             <span class="arrow">▼</span>
+           </button>
+           <div class="faq-answer">
+             We offer a wide range of recipes, including quick meals, vegetarian options, healthy dishes, desserts, and international cuisines.
+           </div>
+         </div>
+       
+         <div class="faq-item">
+           <button class="faq-question">
+             How do I find recipes for special diets?
+             <span class="arrow">▼</span>
+           </button>
+           <div class="faq-answer">
+             Use the search bar or filter options to find recipes for gluten-free, keto, vegan, and other dietary preferences.
+           </div>
+         </div>
+       
+         <div class="faq-item">
+           <button class="faq-question">
+             Are your recipes beginner-friendly?
+             <span class="arrow">▼</span>
+           </button>
+           <div class="faq-answer">
+             Yes, most of our recipes come with detailed step-by-step instructions to help beginners get started in the kitchen.
+           </div>
+         </div>
+
+         <div class="faq-item">
+            <button class="faq-question">
+              Do you provide nutritional information?
+              <span class="arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes, each recipe includes nutritional details like calories, protein, carbs, and fats per serving.
+            </div>
+       </div>
+       <div class="faq-item">
+         <button class="faq-question">
+           Can I save my favorite recipes?
+           <span class="arrow">▼</span>
+         </button>
+         <div class="faq-answer">
+           Currently, you can bookmark pages in your browser to save your favorite recipes. A dedicated "Save Recipe" feature is coming soon.
+         </div>
+       </div>
+
+
+       <div class="faq-item">
+        <button class="faq-question">
+          Do you offer video tutorials?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes, we have a YouTube channel where we post video tutorials for some of our popular recipes. Check it out <a href="https://www.youtube.com/c/SimplyRecipes">here</a>.
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          What should I do if I have a question about a recipe?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          You can contact us using the "Contact Us" page, or leave a comment under the specific recipe.
+        </div>
+      </div>
+    </section>       
  </main>
 
   <footer class="footer" >
       <p> © 2024 SimplyRecipes Built by Coding Addict </p>
    </footer>
    <script>
+      // Select all FAQ items
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach((item) => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  const arrow = item.querySelector('.arrow');
+
+  question.addEventListener('click', () => {
+    // Close other answers
+    faqItems.forEach((otherItem) => {
+      const otherAnswer = otherItem.querySelector('.faq-answer');
+      const otherArrow = otherItem.querySelector('.arrow');
+
+      if (otherAnswer !== answer) {
+        otherAnswer.classList.remove('open');
+        otherAnswer.style.maxHeight = null; // Reset height
+        otherArrow.textContent = '▼';
+      }
+    });
+
+    // Toggle the current answer
+    if (answer.classList.contains('open')) {
+      answer.classList.remove('open');
+      answer.style.maxHeight = null; // Close
+      arrow.textContent = '▼'; // Change arrow to 'down'
+    } else {
+      answer.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px'; // Expand to fit content
+      arrow.textContent = '▲'; // Change arrow to 'up'
+    }
+  });
+});
+
       const hamburger = document.querySelector('.hamburger-menu');
        const navLinks = document.querySelector('.nav-links');
    

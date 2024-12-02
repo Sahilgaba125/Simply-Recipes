@@ -101,7 +101,8 @@ document.querySelector('.right-arrow-container').addEventListener('click', nextI
 
   // Toggle submenu on mobile
   submenuToggle.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default link behavior
+    e.preventDefault(); // Prevent default link behavior of browser and loads new page. 
+    // can remove it if its not an <a> tag/href link
     submenu.classList.toggle('show-submenu');
   });
 })();
