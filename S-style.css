@@ -584,6 +584,7 @@ a{
   font-weight: bold;
   text-align: left;
   transition: background-color 0.3s ease;
+  color: #242222; /* Set your desired color */
 }
 
 .faq-question:hover {
@@ -593,6 +594,7 @@ a{
 .arrow {
   font-size: 1.2rem;
   margin-left: 0.5rem;
+  color: #242222;
 }
 
 .faq-answer {
