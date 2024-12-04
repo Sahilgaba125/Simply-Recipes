@@ -71,6 +71,17 @@ html, body {
   opacity: 1;
   animation: bodyFadeIn 0.3s ease-in-out forwards;
 }
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+/* You can also adjust specific elements */
+body.dark-mode button {
+  background-color: #444;
+  color: #fff;
+}
 /* Keyframes for fade in and fade out */
 @keyframes bodyFadeIn {
   from {
@@ -236,7 +247,11 @@ a{
   display: flex; /* Show submenu on toggle */
   justify-content: space-evenly;
 }
-
+/* Default (Mobile) */
+#dark-mode-toggle {
+  order: 3; /* Keep it last */
+  margin-left: auto;
+}
 
 
 /* Header on desktop */
@@ -278,7 +293,6 @@ a{
   .submenu-links {
     position: absolute;
     display: block;
-    
     top: 25px;
     left: 0;
     background-color: gray;
@@ -289,25 +303,26 @@ a{
     transition: all .3s ease-in-out;
   }
   .submenu:hover .submenu-links{
-  
     z-index: 1000;
     padding: 1rem;
     visibility: visible;
     opacity: 1;
-
     transform: translate(0px);
   }
   .submenu-links a {
     display: block; /* Each link takes up a whole line */
     padding: 0.5rem 1rem; /* Add padding for better spacing */
     text-align: left; /* Optional: Align text */
-    
-
   }
   
   .submenu-links a:hover {
     background-color: var(--primaryColor); /* Highlight background on hover */
     color: white; /* Change text color on hover */
+  }
+  #dark-mode-toggle {
+    position: absolute;
+    top: 2rem; /* Top-right corner */
+    right: 2rem;
   }
 }
 /* Wrappers */

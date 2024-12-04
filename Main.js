@@ -1,4 +1,40 @@
-// 1. Form validation. 2. Single Read more. 3. Hamburger menu 4. Hero Caraousel/Slider. 5. Scroll based animation.
+// 1. Form validation. 2. Faq 3. Hamburger menu 4. Hero Caraousel/Slider. 5. Scroll based animation.
+
+// IIFE Immediately Invoked Function Expression
+(function () {
+  // Elements
+  const hamburger = document.querySelector('.hamburger-menu');
+  const navLinks = document.querySelector('.nav-links');
+  const submenuToggle = document.querySelector('.submenu-toggle');
+  const submenu = document.querySelector('.submenu');
+
+  // Toggle hamburger menu
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show-links');
+  });
+
+  // Toggle submenu on mobile
+  submenuToggle.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default link behavior of browser and loads new page. 
+    // can remove it if its not an <a> tag/href link
+    submenu.classList.toggle('show-submenu');
+  });
+  const toggleButton = document.querySelector("#dark-mode-toggle");
+const body = document.body;
+
+toggleButton.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  const theme = body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("theme", theme);
+});
+
+window.addEventListener("load", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+  }
+});
+})();
 
 const recipes = document.querySelectorAll('.recipe');
 
@@ -83,28 +119,3 @@ setInterval(nextImage, intervalTime);
 // Manual controls
 document.querySelector('.left-arrow-container').addEventListener('click', previousImage);
 document.querySelector('.right-arrow-container').addEventListener('click', nextImage);
-
-
-
-
-(function () {
-  // Elements
-  const hamburger = document.querySelector('.hamburger-menu');
-  const navLinks = document.querySelector('.nav-links');
-  const submenuToggle = document.querySelector('.submenu-toggle');
-  const submenu = document.querySelector('.submenu');
-
-  // Toggle hamburger menu
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show-links');
-  });
-
-  // Toggle submenu on mobile
-  submenuToggle.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default link behavior of browser and loads new page. 
-    // can remove it if its not an <a> tag/href link
-    submenu.classList.toggle('show-submenu');
-  });
-})();
-
-  
