@@ -13,24 +13,31 @@
   <nav class="header">
     <div class="nav-wrapper">
       <div class="nav-header">
-         <a href="index.html"> 
-           <img src="images/logo.svg" id="logo" alt="Simply Recipes">
-         </a>
-         <button type="button" class="hamburger-menu contact-btn">
-          <i class="fas fa-align-justify"></i> <!-- Icon for hamburger menu -->
-         </button>
+        <a href="index.html">
+          <img src="images/logo.svg" id="logo" alt="Simply Recipes">
+        </a>
+        <button id="dark-mode-toggle">Dark Mode</button>
+        <button type="button" class="hamburger-menu">
+          <i class="fas fa-align-justify"></i>
+        </button>
+       
       </div>
-       <div class="nav-links">
-         <a class="nav-link" href="index.html">Home</a>
-         <a class="nav-link" href="About.html">About</a>
-         <a class="nav-link" href="Tags.html">Tags</a>
-         <a class="nav-link" href="#">Recipes</a>
-         <div class="nav-link contact-link">
-           <a class="contact-btn" href="contact.html">Contact</a>
-         </div>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="About.html">About</a>
+        <a class="nav-link" href="Tags.html">Tags</a>
+        <div class="nav-link submenu">
+          <a class="submenu-toggle" href="#"> Recipes <i class="fas fa-chevron-down"></i></a>
+          <div class="submenu-links">
+            <a href="breakfast.html">Breakfast</a>
+            <a href="dinner.html">Dinner</a>
+            <a href="desserts.html">Desserts</a>
+          </div>
+        </div>
+        <a class="nav-link contact-link" href="contact.html">Contact</a>
       </div>
     </div>
-   </nav>
+  </nav>
 
   <main class="wrapper">
     <section class="contact-hero">
@@ -99,12 +106,7 @@
   </footer>
    
  <script>
-   const hamburger = document.querySelector('.hamburger-menu');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show-links'); // Toggles 'show-links' class to display or hide the nav links
-    }); 
+  
     
     const form = document.querySelector(".contact-form");
     const nameInput = document.querySelector(".name-input");
@@ -185,10 +187,9 @@ modal.addEventListener('click', (e) => {
         modal.classList.remove('show');
     }
 });
-
-
-
  </script>
+ <script src="common.js"> </script>
  <script src="Main.js"></script>
+ 
 </body>
 </html>
