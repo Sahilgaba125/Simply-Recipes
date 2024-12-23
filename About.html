@@ -47,7 +47,7 @@
              <a href="contact.html"><button class="contact-btn"> Contact </button></a>
           </article>
           <img src="images/recipe-1.jpeg" class="about-hero-image">
-          <div class="bouncing-arrow">⬇</div>  
+          <div class="bouncing-arrow"><img src="images/scroll-down.png"> </div>  
     </section>
        
     <section class="faq-section">
@@ -129,39 +129,46 @@
       <p> © 2024 SimplyRecipes Built by Coding Addict </p>
    </footer>
    <script>
-      // Select all FAQ items
-const faqItems = document.querySelectorAll('.faq-item');
+     
+     // faqItems.forEach uses two levels of loops:
+    // The outer loop (item) identifies the clicked FAQ.
+   // The inner loop (otherItem) ensures all other FAQs are closed, except the clicked one.
+ const faqItems = document.querySelectorAll('.faq-item');
 
-faqItems.forEach((item) => {
+ faqItems.forEach((item) => {
   const question = item.querySelector('.faq-question');
   const answer = item.querySelector('.faq-answer');
+  // answer is the answer section of the currently clicked FAQ (item from the outer loop).
   const arrow = item.querySelector('.arrow');
 
   question.addEventListener('click', () => {
-    // Close other answers
     faqItems.forEach((otherItem) => {
       const otherAnswer = otherItem.querySelector('.faq-answer');
+      //otherAnswer is the answer section of each FAQ being checked during inner loop (otherItem)
       const otherArrow = otherItem.querySelector('.arrow');
 
       if (otherAnswer !== answer) {
         otherAnswer.classList.remove('open');
-        otherAnswer.style.maxHeight = null; // Reset height
+        otherAnswer.style.maxHeight = null;
         otherArrow.textContent = '▼';
       }
     });
 
-    // Toggle the current answer
+    // to close current open faq.
     if (answer.classList.contains('open')) {
       answer.classList.remove('open');
-      answer.style.maxHeight = null; // Close
-      arrow.textContent = '▼'; // Change arrow to 'down'
+      answer.style.maxHeight = null;
+      arrow.textContent = '▼';
     } else {
       answer.classList.add('open');
-      answer.style.maxHeight = answer.scrollHeight + 'px'; // Expand to fit content
-      arrow.textContent = '▲'; // Change arrow to 'up'
+      // answer.style.maxHeight = answer.scrollHeight + 'px'; Dynamically sets the height of 
+      // the .faq-answer based on the actual content size. + measures the full height of the
+      //  content inside the FAQ answer (even if it’s hidden) and expands it perfectly.
+      arrow.textContent = '▲';
     }
   });
 });
+
 </script>
   <script src="Main.js"> </script>
   <script src="common.js"> </script>

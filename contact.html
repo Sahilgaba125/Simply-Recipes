@@ -131,28 +131,33 @@ function validateName() {
 function validateEmail() {
   const emailError = document.querySelector(".email-error");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for valid email
+  // agar Ye na ho to
   if (emailInput.value.trim() === "") {
     emailError.textContent = "Email is required.";
     emailInput.style.border = "3px solid red";
     return false;
-  } else if (!emailRegex.test(emailInput.value.trim())) {
+   } 
+   // ! jab tak ye na ho
+   else if (!emailRegex.test(emailInput.value.trim())) {
     emailError.textContent = "Enter a valid email address.";
     emailInput.style.border = "3px solid red";
     return false;
     //trim Removes any extra//accidental whitespace by user from the start and end of the input. 
-  } else {
+  } 
+  else {
     emailError.textContent = ""; // Clear error message
     emailInput.style.border = "3px solid green"; // Mark as valid
     return true;
   }
 }
+ 
 
-// Main form validation function
-function validateForm(event) {
+  // Main form validation function
+  function validateForm(event) {
   const isNameValid = validateName();
   const isEmailValid = validateEmail();
 
-  // Prevent submission if any field is invalid
+  // Prevent submission+ give alert if any field is invalid
   if (!isNameValid || !isEmailValid) {
     event.preventDefault();
     alert("Please fix the errors before submitting.");

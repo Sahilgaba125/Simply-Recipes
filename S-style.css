@@ -161,7 +161,7 @@ h5 {
 .contact-btn:hover {
   background: var(--primary-700);
   box-shadow : var(--shadow-3);
-  transform: translateY(1px);
+  transform: scale(1.1);
 }
 
 
@@ -236,11 +236,19 @@ a{
   color: var(--primary-500);
   transform: scale(1.1);
 }
+.contact-link {
+  margin: 0 auto;
+  width: 8rem;
+  text-align: center;
+  margin-top: 1rem;
+  border-bottom: 4px solid black;
+}
 
 /* Submenu styles */
 .submenu-links {
   display: none;
   background-color: var(--lightGrayColor);
+  
 }
 
 .submenu.show-submenu .submenu-links {
@@ -249,8 +257,12 @@ a{
 }
 /* Default (Mobile) */
 #dark-mode-toggle {
-  order: 3; /* Keep it last */
-  margin-left: auto;
+ 
+  margin: 0 auto;
+  width: 8rem;
+  text-align: center;
+  margin-top: 1rem;
+  border-bottom: 4px solid black;
 }
 
 
@@ -277,11 +289,15 @@ a{
     padding: 0;
     margin-right: 1rem;
     border-bottom: none;
+
   }
 
  .contact-link {
     margin-left: auto;
     margin-right:0;
+    margin-top: none;
+    max-height: 2.5rem;
+    width: auto;
   }
 
   .hamburger-menu {
@@ -321,8 +337,8 @@ a{
   }
   #dark-mode-toggle {
     position: absolute;
-    top: 2rem; /* Top-right corner */
-    right: 2rem;
+    right: 45%;
+    top: 1.5rem;
   }
 }
 /* Wrappers */
@@ -371,7 +387,8 @@ a{
 .hero-image:nth-child(3) { transform: translateX(200%); }
 .hero-image:nth-child(4) { transform: translateX(300%); }
 .hero-image:nth-child(5) { transform: translateX(400%); }
-
+/* define the initial positions of images in the slider.To "stack" the images horizontally off-screen, ready to slide into view when needed.
+translateX(200%): Moves the 3rd image 200% of its width to the right,and so on */
 .hero-text {
   position: relative;
   color: white;
@@ -426,9 +443,9 @@ a{
   display: block; /*  if the anchor tag already contains an image and the image naturally takes up the space you want to be clickable, then
   you might not need display: block;. But adding it ensures that even empty space around the image within the anchor tag will also be clickable.*/
   opacity: 0;
+  visibility: hidden;
   transform: translateX(100px);
   animation: fadeSlide 1.5s ease-out forwards;
-  visibility: hidden;
   animation-play-state: paused; /* Pause animation by default */
 }
 /* Animation triggered by adding the .animate class */
@@ -437,7 +454,7 @@ a{
   opacity: 1;
   transform: translateX(0);
   visibility: visible;
-  animation-delay: 0.2s; /* Stagger the animations */
+  animation-delay: 0.2s; /* Delays ensure animations don’t all run at the same time. This makes the experience smoother and more visually appealing. */
   animation-play-state: running;
 }
 /* Keyframes for fade and slide effect */
@@ -565,7 +582,7 @@ a{
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
-  color: #333;
+  color: white;
   animation: bounce 1.5s infinite;
   z-index: 100;
 }
@@ -623,7 +640,7 @@ a{
 }
 
 .faq-answer.open {
-  max-height: 200px; /* Adjust based on the content size */
+  max-height: 300px; /* Adjust based on the content size */
   padding: 1rem;
 }
 
@@ -640,7 +657,11 @@ a{
     grid-template-columns: 1fr 1fr;
     gap:2rem;
   }
-   }
+  .bouncing-arrow{
+    display: none;
+  }  
+
+}
 
 
 /* contact page */

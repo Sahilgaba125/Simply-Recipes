@@ -1,8 +1,17 @@
-// 1. Form validation. 2. Faq 3. Hamburger menu 4. Hero Caraousel/Slider. 5. Scroll based animation.
-
-
+// 1.Form valid. 2.Faq 3.Hamburger 4.Slider. 5.Scroll-animation. 6.Dark-mode 7.Page fade-out
 
 const recipes = document.querySelectorAll('.recipe');
+
+// basic syntax for IntersectionObserver / browser API for scroll-based animations
+
+// const observer = new IntersectionObserver(
+  // (entries) => { ... }, // Callback function = Callback: Function that gets called when 
+  // observed elements intersect with the viewport.
+  // { ... } // Options object= Settings like how much of an element must be visible to trigger
+  // the callback.
+// );
+
+// new IntersectionObserver(callback, options);
 
 // Create IntersectionObserver
 const observer = new IntersectionObserver(
@@ -11,6 +20,9 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         // Dynamically stagger animations as elements enter viewport
         entry.target.style.animationDelay = `${index * 0.2}s`;
+        // By applying increasing delays (index * 0.2s), each element animates in sequence as 
+        // it enters the viewport. Without this, all elements would animate at once, which can //
+        // look chaotic.
         entry.target.style.animationPlayState = 'running'; // Ensure animation runs only when class is added
         entry.target.classList.add('animate');
         observer.unobserve(entry.target); // Stop observing once animated
@@ -18,12 +30,10 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.4, // Trigger when 40% of the element is visible
+    threshold: 0.2, // Trigger when 20% of the element is visible
     rootMargin: "0px 0px -20% 0px", // Fine-tune trigger based on viewport
   }
 );
-
-console.log('JavaScript is running!');
 
 // Set initial animation state for all recipes
 recipes.forEach((recipe) => {
@@ -53,9 +63,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-
-
-
+// https://chatgpt.com/c/675696a3-5f5c-8000-86d6-3457540ff373
+// "calculate new positions based on currentIndex," which is the index of the current image in the array of images.
+// The modulus operator (%) is used often in loops, indexing, and circular/rotating logic, 
 const images = document.querySelectorAll('.hero-image');
 let currentIndex = 0;
 const intervalTime = 10000;
@@ -69,6 +79,7 @@ function updateImagePosition() {
 function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
     updateImagePosition();
+  // % ensures values "wrap around" a range, which is helpful for creating circular or continuous logic 
 }
 
 function previousImage() {
