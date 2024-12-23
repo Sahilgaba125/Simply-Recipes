@@ -345,12 +345,9 @@ a{
 
 /* Main */
 .wrapper {
-  max-width: 1120px; /* Both properties help create a balance between responsiveness on small screens (with 90vw) and a fixed, manageable 
-  size on larger screens (with 1120px as the cap). This approach is often used to control content width on both mobile and desktop. */
   width:90vw;
   margin: 0 auto;
   padding-top: 7rem;
-  min-height: calc(100vh - (6rem + 4rem)); 
 }
 
 .main-hero {
@@ -532,6 +529,11 @@ translateX(200%): Moves the 3rd image 200% of its width to the right,and so on *
    }
 }
 @media screen and (min-width: 992px) {
+  .wrapper {
+    max-width: 1120px; /* Both properties help create a balance between responsiveness on small screens (with 90vw) and a fixed, manageable 
+  size on larger screens (with 1120px as the cap). This approach is often used to control content width on both mobile and desktop. */
+    min-height: calc(100vh - (6rem + 4rem)); 
+  }
   .main{
     grid-template-columns: 200px 1fr; /* so second column takes up all the remaining space */
     gap:0.5rem;
@@ -859,15 +861,14 @@ margin: 0;
 /* Footer */
 .footer {
   background-color: #1f2937;
-  height: 4rem;
-  padding: 1.2rem;
+  min-height: 4rem;
   text-align: center;
 }
 .footer p {
   color: #e2e8f0;
-}
-.additional-info{
-  margin-bottom: 2rem;
+  padding-top: 1rem;
+  margin: 0 auto;
+  margin-bottom:0 ;
 }
 
 /* General dropdown container styling */
