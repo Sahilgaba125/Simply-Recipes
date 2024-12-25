@@ -16,8 +16,8 @@ html {
   --bodyFont: 'Nunito', sans-serif;
 
   /* Basic Colors */
-  --backgroundColor: #f1f5f9; /* Light background */
-  --textColor: #0f172a; /* Dark text */
+  --backgroundColor: #f8f9fa ; /* Light background */
+  --textColor: #2d3436; /* Dark text */
  
   /* Image/Button basics */
   --borderRadius: 0.25rem;
@@ -75,17 +75,7 @@ html, body {
   min-height: 100vh;
 
 }
-/* Dark mode styles */
-body.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
 
-/* You can also adjust specific elements */
-body.dark-mode button {
-  background-color: #444;
-  color: #fff;
-}
 /* Keyframes for fade in and fade out */
 @keyframes bodyFadeIn {
   from {
@@ -165,7 +155,6 @@ h5 {
 .contact-btn:hover {
   background: var(--primary-700);
   box-shadow : var(--shadow-3);
-  transform: scale(1.1);
 }
 
 
@@ -219,7 +208,6 @@ a{
  /*  position: static; for more stable behavior. */
   left: 0;
   width: 100%;
-  background-color: var(--backgroundColor);
   transition: var(--transition);
 }
 
@@ -357,7 +345,9 @@ a{
   }
   #dark-mode-toggle {
     bottom: 1.5rem; /* Distance from the bottom */
-    right: 3rem; /* Distance from the right */
+    right: 1.5rem; /* Distance from the right */
+    width: 4rem;
+    height: 4rem;
   }
 }
 /* Wrappers */
@@ -880,7 +870,7 @@ margin: 0;
 }
 /* Footer */
 .footer {
-  background-color: #1f2937;
+  background-color: #333;
   min-height: 4rem;
   text-align: center;
 }
@@ -1012,7 +1002,22 @@ margin: 0;
   float: right;
 }
 
-
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #dfe6e9;
+}
+body.dark-mode .header, .footer {
+  background-color: #121212;
+}
+body.dark-mode a{
+  color: #dfe6e9;
+}
+/* You can also adjust specific elements */
+body.dark-mode button {
+  background-color: #444;
+  color: #fff;
+}
 
 
 
