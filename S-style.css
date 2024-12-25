@@ -258,15 +258,32 @@ a{
   display: flex; /* Show submenu on toggle */
   justify-content: space-evenly;
 }
-/* Default (Mobile) */
+/* Floating dark mode toggle button */
 #dark-mode-toggle {
- 
-  margin: 0 auto;
-  width: 8rem;
-  text-align: center;
-  margin-top: 1rem;
-  border: 2px solid black;
+  position: fixed; /* Fixed to the viewport */
+  bottom: 1.5rem; /* Distance from the bottom */
+  right: 1.5rem; /* Distance from the right */
+  width: 3rem; /* Adjust size as needed */
+  height: 3rem;
+  border: none;
+  border-radius: 50%; /* Makes it a circular button */
+  background-color: #1f2937;
+  color: var(--buttonTextColor);
+  box-shadow: var(--shadow-1);
+  cursor: pointer;
+  z-index: 1100; /* Ensures it stays above other elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Add hover effect for better user experience */
+#dark-mode-toggle:hover {
+
+  transform: scale(1.1); /* Slightly enlarges on hover */
+  transition: all 0.3s ease;
+}
+
 
 
 /* Header on desktop */
@@ -339,9 +356,8 @@ a{
     color: white; /* Change text color on hover */
   }
   #dark-mode-toggle {
-    position: absolute;
-    right: 45%;
-    top: 1.5rem;
+    bottom: 1.5rem; /* Distance from the bottom */
+    right: 3rem; /* Distance from the right */
   }
 }
 /* Wrappers */
@@ -995,6 +1011,7 @@ margin: 0;
   cursor: pointer;
   float: right;
 }
+
 
 
 
