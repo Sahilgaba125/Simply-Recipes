@@ -70,6 +70,10 @@ html, body {
   overflow-x: hidden;  /* Prevent horizontal scrolling */
   opacity: 1;
   animation: bodyFadeIn 0.3s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
 }
 /* Dark mode styles */
 body.dark-mode {
@@ -241,7 +245,6 @@ a{
   width: 8rem;
   text-align: center;
   margin-top: 1rem;
-  border-bottom: 4px solid black;
 }
 
 /* Submenu styles */
@@ -262,7 +265,7 @@ a{
   width: 8rem;
   text-align: center;
   margin-top: 1rem;
-  border-bottom: 4px solid black;
+  border: 2px solid black;
 }
 
 
@@ -295,9 +298,9 @@ a{
  .contact-link {
     margin-left: auto;
     margin-right:0;
-    margin-top: none;
     max-height: 2.5rem;
     width: auto;
+    margin-top: 0;
   }
 
   .hamburger-menu {
@@ -533,6 +536,7 @@ translateX(200%): Moves the 3rd image 200% of its width to the right,and so on *
     max-width: 1120px; /* Both properties help create a balance between responsiveness on small screens (with 90vw) and a fixed, manageable 
   size on larger screens (with 1120px as the cap). This approach is often used to control content width on both mobile and desktop. */
     min-height: calc(100vh - (6rem + 4rem)); 
+    flex: 1; /* Makes the main section stretch dynamically between the header and footer. */
   }
   .main{
     grid-template-columns: 200px 1fr; /* so second column takes up all the remaining space */
@@ -748,14 +752,14 @@ translateX(200%): Moves the 3rd image 200% of its width to the right,and so on *
 }
 .tag:hover {
   background: var(--primary-500);
-  animation: glow 1s infinite alternate;
+  /* animation: glow .5s infinite alternate; */
 }
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px #1c7531;
   }
   100% {
-    box-shadow: 0 0 200px #2ba021;
+    box-shadow: 0 0 20px #2ba021;
   }
 }
 
