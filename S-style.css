@@ -201,7 +201,9 @@ a{
 .hamburger-menu i{
   font-size: 1.5rem;
 }
-
+#logo{
+  max-height: 6rem;
+}
 .nav-links {
   display: none; /* Hidden on mobile */
   flex-direction: column;
@@ -610,6 +612,9 @@ translateX(200%): Moves the 3rd image 200% of its width to the right,and so on *
 
 /* faq section */
 
+.faq-section h3{
+  text-align: center;
+}
 .faq-item {
   border-bottom: 1px solid #ddd;
   margin-bottom: 1rem;
@@ -677,7 +682,7 @@ translateX(200%): Moves the 3rd image 200% of its width to the right,and so on *
 
 
 /* contact page */
-.wrapper .contact-hero .contact-form{
+.contact-form{
    background-color: white;
    width:100%;
    padding:0.5rem 1rem;
@@ -1007,17 +1012,21 @@ body.dark-mode {
   background-color: #1a1a1a;
   color: #dfe6e9;
 }
-body.dark-mode .header, .footer {
+body.dark-mode .header, body.dark-mode .footer,  body.dark-mode .faq-question {
   background-color: #121212;
 }
-body.dark-mode a{
+body.dark-mode a, body.dark-mode button , body.dark-mode .faq-answer, body.dark-mode .recipe h5{
   color: #dfe6e9;
 }
-/* You can also adjust specific elements */
-body.dark-mode button {
-  background-color: #444;
-  color: #fff;
+body.dark-mode .dropdown-content a, body.dark-mode .contact-form {
+  background-color: #121212;
+  color: #dfe6e9;
 }
+
+
+
+/* You can also adjust specific elements */
+
 
 
 
